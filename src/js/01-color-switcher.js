@@ -1,4 +1,6 @@
-import getRandomHexColor from './randomHEX';
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 
 const startBtn = document.querySelector('button[data-start]');
 const stopBtn = document.querySelector('button[data-stop]');
@@ -13,7 +15,7 @@ function onStartBtnClick(evt) {
   startBtn.disabled = true;
   stopBtn.disabled = false;
   intervalID = setInterval(() => {
-    generatedColor = getRandomHexColor();
+    const generatedColor = getRandomHexColor();
     bodyEl.style.backgroundColor = generatedColor;
   }, 1000);
 }
