@@ -1,10 +1,13 @@
 import { Notify } from 'notiflix';
 
 const formEl = document.querySelector('.form');
+// const input = document.querySelectorAll('input');
 const delayInputEl = document.querySelector('input[name=delay]');
 const stepInputEl = document.querySelector('input[name=step]');
 const amountInputEl = document.querySelector('input[name=amount]');
 const promiseCreateBtn = document.querySelector('button[type=submit]');
+
+// promiseCreateBtn.setAttribute('disabled', '');
 
 addFormStyle();
 
@@ -27,6 +30,12 @@ function createPromise(position, delay) {
 promiseCreateBtn.addEventListener('click', onPromiseCreateBtnClick);
 
 function onPromiseCreateBtnClick() {
+  // for (let i = 0; i < input.length; i++) {
+  //   if (input[i].value !== '') {
+  //     promiseCreateBtn.removeAttribute('disabled', '');
+  //   }
+  // }
+
   let delay = Number(delayInputEl.value);
   let delayStep = Number(stepInputEl.value);
   let delayAmount = Number(amountInputEl.value);
@@ -40,7 +49,7 @@ function onPromiseCreateBtnClick() {
       });
     delay += delayStep;
   }
-  formEl.reset();
+  // formEl.reset();
 }
 
 function addFormStyle() {
@@ -50,7 +59,7 @@ function addFormStyle() {
   formEl.style.gap = '10px';
   formEl.style.justifyItems = 'end';
   formEl.style.justifyContent = 'center';
-  formEl.style.border = 'thin solid darkgrey';
+  formEl.style.border = 'thin dashed #031d45';
   formEl.style.padding = '30px';
 
   promiseCreateBtn.style.padding = '3px 24px';
@@ -59,4 +68,5 @@ function addFormStyle() {
   promiseCreateBtn.style.border = 'thin dashed #031d45';
   promiseCreateBtn.style.borderRadius = '4px';
   promiseCreateBtn.style.cursor = 'pointer';
+  promiseCreateBtn.style.boxShadow = '2px #031d45';
 }
