@@ -53,7 +53,7 @@ function addFormStyle() {
   formEl.style.border = 'thin solid darkgrey';
   formEl.style.padding = '30px';
 
-  promiseCreateBtn.style.padding = '3px 23px';
+  promiseCreateBtn.style.padding = '3px 24px';
   promiseCreateBtn.style.backgroundColor = '#689ff7';
   promiseCreateBtn.style.color = '#031d45';
   promiseCreateBtn.style.border = 'thin dashed #031d45';
