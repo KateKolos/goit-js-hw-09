@@ -5,6 +5,8 @@ require('flatpickr/dist/themes/dark.css');
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
+const timerWrap = document.querySelector('div.timer-wrap');
+console.log('timerWrap', timerWrap.style);
 const datePickerInput = document.getElementById('datetime-picker');
 const startTimerBtn = document.querySelector('button[data-start]');
 const daysRemaining = document.querySelector('[data-days');
@@ -22,22 +24,32 @@ let ms;
 addTimerStyle();
 
 function addTimerStyle() {
+  timerWrap.style.display = 'inline-block';
+  timerWrap.style.alignItem = 'center';
+  timerWrap.style.margin = 'auto';
+  timerWrap.style.padding = '50px';
+  timerWrap.style.border = 'thin solid #5A5096';
+  timerWrap.style.borderRadius = '4px';
+  timerWrap.style.backgroundColor = '#D1CEE2';
+
   datePickerInput.style.padding = '20px';
   datePickerInput.style.color = '#5A5096';
-  datePickerInput.style.marginLeft = '20px';
   datePickerInput.style.marginRight = '20px';
   datePickerInput.style.border = 'thin solid #A39EC5';
   datePickerInput.style.borderRadius = '4px';
+  datePickerInput.style.backgroundColor = '#A39EC5';
 
   startTimerBtn.style.padding = '20px';
   startTimerBtn.style.backgroundColor = '#A39EC5';
+  startTimerBtn.style.color = '#514F62';
+
   startTimerBtn.style.border = 'transparent';
   startTimerBtn.style.borderRadius = '4px';
   startTimerBtn.style.cursor = 'pointer';
 
   timer.style.display = 'flex';
   timer.style.gap = '20px';
-  timer.style.marginLeft = '20px';
+  //   timer.style.marginLeft = '20px';
   timer.style.marginTop = '20px';
   timer.style.color = '#A39EC5';
 
