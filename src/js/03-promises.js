@@ -45,7 +45,7 @@ function onPromiseCreateBtnClick() {
 
 function addFormStyle() {
   formEl.style.display = 'grid';
-  formEl.style.backgroundColor = '#689ff7';
+  formEl.style.backgroundColor = '#99b3dd';
   formEl.style.color = '#031d45';
   formEl.style.gap = '10px';
   formEl.style.justifyItems = 'end';
@@ -54,7 +54,7 @@ function addFormStyle() {
   formEl.style.padding = '30px';
 
   promiseCreateBtn.style.padding = '3px 24px';
-  promiseCreateBtn.style.backgroundColor = '#689ff7';
+  promiseCreateBtn.style.backgroundColor = '#99b3dd';
   promiseCreateBtn.style.color = '#031d45';
   promiseCreateBtn.style.border = 'thin dashed #031d45';
   promiseCreateBtn.style.borderRadius = '4px';
