@@ -9,33 +9,29 @@ const promiseCreateBtn = document.querySelector('button[type=submit]');
 
 // promiseCreateBtn.setAttribute('disabled', '');
 
-addFormStyle();
+// addFormStyle();
 
 formEl.addEventListener('submit', event => {
   event.preventDefault();
 });
 
 function createPromise(position, delay) {
-  return new Promise((resolve, reject) => {
-    const shouldResolve = Math.random() > 0.3;
+  const shouldResolve = Math.random() > 0.3;
 
-    if (shouldResolve) {
-      resolve({ position, delay });
-    } else {
-      reject({ position, delay });
-    }
-  }, delay);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
 }
 
 promiseCreateBtn.addEventListener('click', onPromiseCreateBtnClick);
 
 function onPromiseCreateBtnClick() {
-  // for (let i = 0; i < input.length; i++) {
-  //   if (input[i].value !== '') {
-  //     promiseCreateBtn.removeAttribute('disabled', '');
-  //   }
-  // }
-
   let delay = Number(delayInputEl.value);
   let delayStep = Number(stepInputEl.value);
   let delayAmount = Number(amountInputEl.value);
@@ -51,24 +47,24 @@ function onPromiseCreateBtnClick() {
       });
     delay += delayStep;
   }
-  // formEl.reset();
+  formEl.reset();
 }
 
-function addFormStyle() {
-  formEl.style.display = 'grid';
-  formEl.style.backgroundColor = '#99b3dd';
-  formEl.style.color = '#031d45';
-  formEl.style.gap = '10px';
-  formEl.style.justifyItems = 'end';
-  formEl.style.justifyContent = 'center';
-  formEl.style.border = 'thin dashed #031d45';
-  formEl.style.padding = '30px';
+// function addFormStyle() {
+//   formEl.style.display = 'grid';
+//   formEl.style.backgroundColor = '#99b3dd';
+//   formEl.style.color = '#031d45';
+//   formEl.style.gap = '10px';
+//   formEl.style.justifyItems = 'end';
+//   formEl.style.justifyContent = 'center';
+//   formEl.style.border = 'thin dashed #031d45';
+//   formEl.style.padding = '30px';
 
-  promiseCreateBtn.style.padding = '3px 24px';
-  promiseCreateBtn.style.backgroundColor = '#99b3dd';
-  promiseCreateBtn.style.color = '#031d45';
-  promiseCreateBtn.style.border = 'thin dashed #031d45';
-  promiseCreateBtn.style.borderRadius = '4px';
-  promiseCreateBtn.style.cursor = 'pointer';
-  promiseCreateBtn.style.boxShadow = '2px #031d45';
-}
+//   promiseCreateBtn.style.padding = '3px 24px';
+//   promiseCreateBtn.style.backgroundColor = '#99b3dd';
+//   promiseCreateBtn.style.color = '#031d45';
+//   promiseCreateBtn.style.border = 'thin dashed #031d45';
+//   promiseCreateBtn.style.borderRadius = '4px';
+//   promiseCreateBtn.style.cursor = 'pointer';
+//   promiseCreateBtn.style.boxShadow = '2px #031d45';
+// }
